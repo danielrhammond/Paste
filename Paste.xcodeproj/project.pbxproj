@@ -12,12 +12,72 @@
 		6556B1A51EE063D400468A0A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6556B1A31EE063D400468A0A /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6556B1B71EE065D300468A0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6556B1AC1EE065D300468A0A /* Pilot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 696534871D17100900DF97CB;
+			remoteInfo = "Pilot macOS";
+		};
+		6556B1B91EE065D300468A0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6556B1AC1EE065D300468A0A /* Pilot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 693F04C51D22E1CA00CAE010;
+			remoteInfo = "PilotTests macOS";
+		};
+		6556B1BB1EE065D300468A0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6556B1AC1EE065D300468A0A /* Pilot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 69048A041C46FF23000CE840;
+			remoteInfo = "Pilot iOS";
+		};
+		6556B1BD1EE065D300468A0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6556B1AC1EE065D300468A0A /* Pilot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 69048A0E1C46FF23000CE840;
+			remoteInfo = "PilotTests iOS";
+		};
+		6556B1BF1EE065D300468A0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6556B1AC1EE065D300468A0A /* Pilot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 69048A331C47045D000CE840;
+			remoteInfo = "PilotUI iOS";
+		};
+		6556B1C11EE065D300468A0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6556B1AC1EE065D300468A0A /* Pilot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 69048A3C1C47045D000CE840;
+			remoteInfo = "PilotUITests iOS";
+		};
+		6556B1C31EE065D300468A0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6556B1AC1EE065D300468A0A /* Pilot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 69FADB3F1D30518C001F2E11;
+			remoteInfo = "PilotUI macOS";
+		};
+		6556B1C51EE065D300468A0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6556B1AC1EE065D300468A0A /* Pilot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 69FADB481D30518C001F2E11;
+			remoteInfo = "PilotUITests macOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		6556B19C1EE063D400468A0A /* Paste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6556B19F1EE063D400468A0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6556B1A11EE063D400468A0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6556B1A41EE063D400468A0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6556B1A61EE063D400468A0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6556B1AC1EE065D300468A0A /* Pilot.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pilot.xcodeproj; path = pilot/Pilot.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				6556B19E1EE063D400468A0A /* Paste */,
+				6556B1C81EE065DF00468A0A /* Pilot */,
 				6556B19D1EE063D400468A0A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +117,29 @@
 				6556B1A61EE063D400468A0A /* Info.plist */,
 			);
 			path = Paste;
+			sourceTree = "<group>";
+		};
+		6556B1AD1EE065D300468A0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6556B1B81EE065D300468A0A /* Pilot.framework */,
+				6556B1BA1EE065D300468A0A /* PilotTests macOS.xctest */,
+				6556B1BC1EE065D300468A0A /* Pilot.framework */,
+				6556B1BE1EE065D300468A0A /* PilotTests iOS.xctest */,
+				6556B1C01EE065D300468A0A /* PilotUI.framework */,
+				6556B1C21EE065D300468A0A /* PilotUITests iOS.xctest */,
+				6556B1C41EE065D300468A0A /* PilotUI.framework */,
+				6556B1C61EE065D300468A0A /* PilotUITests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6556B1C81EE065DF00468A0A /* Pilot */ = {
+			isa = PBXGroup;
+			children = (
+				6556B1AC1EE065D300468A0A /* Pilot.xcodeproj */,
+			);
+			name = Pilot;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,12 +190,77 @@
 			mainGroup = 6556B1931EE063D400468A0A;
 			productRefGroup = 6556B19D1EE063D400468A0A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6556B1AD1EE065D300468A0A /* Products */;
+					ProjectRef = 6556B1AC1EE065D300468A0A /* Pilot.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6556B19B1EE063D400468A0A /* Paste */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6556B1B81EE065D300468A0A /* Pilot.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pilot.framework;
+			remoteRef = 6556B1B71EE065D300468A0A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6556B1BA1EE065D300468A0A /* PilotTests macOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "PilotTests macOS.xctest";
+			remoteRef = 6556B1B91EE065D300468A0A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6556B1BC1EE065D300468A0A /* Pilot.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pilot.framework;
+			remoteRef = 6556B1BB1EE065D300468A0A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6556B1BE1EE065D300468A0A /* PilotTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "PilotTests iOS.xctest";
+			remoteRef = 6556B1BD1EE065D300468A0A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6556B1C01EE065D300468A0A /* PilotUI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PilotUI.framework;
+			remoteRef = 6556B1BF1EE065D300468A0A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6556B1C21EE065D300468A0A /* PilotUITests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "PilotUITests iOS.xctest";
+			remoteRef = 6556B1C11EE065D300468A0A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6556B1C41EE065D300468A0A /* PilotUI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PilotUI.framework;
+			remoteRef = 6556B1C31EE065D300468A0A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6556B1C61EE065D300468A0A /* PilotUITests macOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "PilotUITests macOS.xctest";
+			remoteRef = 6556B1C51EE065D300468A0A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6556B19A1EE063D400468A0A /* Resources */ = {

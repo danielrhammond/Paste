@@ -1,3 +1,6 @@
 [submodule "pilot"]
 	path = pilot
 	url = git@github.com:dropbox/pilot.git
+[submodule "RxSwift"]
+	path = RxSwift
+	url = https://github.com/ReactiveX/RxSwift.git
