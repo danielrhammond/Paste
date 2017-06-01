@@ -1,0 +1,3 @@
+[submodule "pilot"]
+	path = pilot
+	url = git@github.com:dropbox/pilot.git
