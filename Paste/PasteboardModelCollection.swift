@@ -9,7 +9,7 @@ public final class PasteboardModelCollection: SimpleModelCollection {
         super.init(collectionId: "pasteboard")
         RxSwift.Observable<Int>.timer(0, period: 5, scheduler: MainScheduler.instance)
             .map { _ -> [String] in
-                let res = NSPasteboard.general().readObjects(forClasses: [NSString.self], options: [:])
+                let res = NSPasteboard.general.readObjects(forClasses: [NSString.self], options: [:])
                 return (res ?? []).flatMap { $0 as? String }
             }
             .subscribe(onNext: { [weak self] in
