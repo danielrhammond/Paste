@@ -20,3 +20,15 @@ public struct PasteboardString: Model {
         return mixer.result()
     }
 }
+
+extension PasteboardString: Equatable {}
+
+public func == (lhs: PasteboardString, rhs: PasteboardString) -> Bool {
+    return lhs.value == rhs.value
+}
+
+extension PasteboardString: Hashable {
+    public var hashValue: Int {
+        return value.hashValue
+    }
+}

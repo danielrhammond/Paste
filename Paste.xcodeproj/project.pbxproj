@@ -328,13 +328,13 @@
 			isa = PBXGroup;
 			children = (
 				6556B19F1EE063D400468A0A /* AppDelegate.swift */,
-				65EB49931EE1B1D90012CBBC /* ViewController.swift */,
 				6556B1A11EE063D400468A0A /* Assets.xcassets */,
 				6556B1A61EE063D400468A0A /* Info.plist */,
 				6556B1A31EE063D400468A0A /* MainMenu.xib */,
 				65EB498D1EE1AE260012CBBC /* Model.swift */,
 				6556B21F1EE069CB00468A0A /* PasteboardModelCollection.swift */,
 				65EB49911EE1B0180012CBBC /* View.swift */,
+				65EB49931EE1B1D90012CBBC /* ViewController.swift */,
 				65EB498F1EE1AE300012CBBC /* ViewModel.swift */,
 			);
 			path = Paste;
