@@ -8,7 +8,9 @@ public struct PasteboardStringViewModel: ViewModel {
 
     // MARK: Public
 
-    public var displayString: String { return pasteboardString.value }
+    public var displayString: String {
+        return pasteboardString.value.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
 
     // MARK: ViewModel
 
