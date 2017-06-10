@@ -7,6 +7,21 @@ import RxCocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        loadUI()
+        setupActionHandlers()
+    }
+
+    // MARK: NSApplicationDelegate
+
+    @IBOutlet weak var window: NSWindow!
+
+    // MARK: Private
+
+    private let context = Context()
+    private var rootViewController: NSViewController?
+    private var contextObserver: Pilot.Observer?
+
+    private func loadUI() {
         let viewController = PasteboardViewController(context: context)
         guard let windowView = window.contentView else { return }
         windowView.addSubview(viewController.view)
@@ -20,12 +35,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         rootViewController = viewController
     }
 
-    // MARK: NSApplicationDelegate
-
-    @IBOutlet weak var window: NSWindow!
-
-    // MARK: Private
-
-    private let context = Context()
-    private var rootViewController: NSViewController?
+    private func setupActionHandlers() {
+        contextObserver = context.receive { (action: PasteboardCopyAction) -> ActionResult in
+            NSPasteboard.general.clearContents()
+            switch action.value {
+            case .string(let value):
+                NSPasteboard.general.writeObjects([value as NSString])
+            }
+            return .handled
+        }
+    }
 }

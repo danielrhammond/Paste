@@ -14,6 +14,15 @@ public struct PasteboardStringViewModel: ViewModel {
 
     public let context: Context
 
+    public func handleUserEvent(_ event: ViewModelUserEvent) {
+        switch event {
+        case .click, .enterKey:
+            PasteboardCopyAction(value: .string(pasteboardString.value)).send(from: context)
+        default:
+            break
+        }
+    }
+
     // MARK: Prviate
 
     private let pasteboardString: PasteboardString

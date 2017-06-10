@@ -44,5 +44,6 @@ public final class PasteboardStringView: NSView, View {
             field.bottomAnchor.constraint(equalTo: bottomAnchor),
             field.rightAnchor.constraint(equalTo: rightAnchor)
             ])
+        field.isEditable = false
     }
 }
