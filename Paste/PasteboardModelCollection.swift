@@ -12,8 +12,8 @@ public final class PasteboardModelCollection: SimpleModelCollection {
                 let res = NSPasteboard.general().readObjects(forClasses: [NSString.self], options: [:])
                 return (res ?? []).flatMap { $0 as? String }
             }
-            .subscribe(onNext: {
-                Swift.print("Next: \($0)")
+            .subscribe(onNext: { [weak self] in
+                self?.onNext(.loaded([$0.map({ PasteboardString(value: $0) })]))
             })
             .disposed(by: disposeBag)
     }
