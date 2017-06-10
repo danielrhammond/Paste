@@ -6,8 +6,7 @@ public final class PasteboardViewController: CollectionViewController {
 
     public init(context: Context) {
         let model = PasteboardModelCollection()
-        let layout = NSCollectionViewFlowLayout()
-        layout.itemSize = NSSize(width: 320, height: 24)
+        let layout = FullWidthLayout()
         super.init(
             model: model,
             modelBinder: DefaultViewModelBindingProvider(),

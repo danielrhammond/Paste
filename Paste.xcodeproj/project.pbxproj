@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		652CD9081EEC71940067C417 /* PasteboardActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652CD9071EEC71940067C417 /* PasteboardActions.swift */; };
+		652CD90A1EEC75FE0067C417 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652CD9091EEC75FE0067C417 /* Layout.swift */; };
 		6556B1A01EE063D400468A0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556B19F1EE063D400468A0A /* AppDelegate.swift */; };
 		6556B1A21EE063D400468A0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6556B1A11EE063D400468A0A /* Assets.xcassets */; };
 		6556B1A51EE063D400468A0A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6556B1A31EE063D400468A0A /* MainMenu.xib */; };
@@ -279,6 +280,7 @@
 
 /* Begin PBXFileReference section */
 		652CD9071EEC71940067C417 /* PasteboardActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteboardActions.swift; sourceTree = "<group>"; };
+		652CD9091EEC75FE0067C417 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		6556B19C1EE063D400468A0A /* Paste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6556B19F1EE063D400468A0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6556B1A11EE063D400468A0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -332,10 +334,11 @@
 				6556B19F1EE063D400468A0A /* AppDelegate.swift */,
 				6556B1A11EE063D400468A0A /* Assets.xcassets */,
 				6556B1A61EE063D400468A0A /* Info.plist */,
+				652CD9091EEC75FE0067C417 /* Layout.swift */,
 				6556B1A31EE063D400468A0A /* MainMenu.xib */,
 				65EB498D1EE1AE260012CBBC /* Model.swift */,
-				6556B21F1EE069CB00468A0A /* PasteboardModelCollection.swift */,
 				652CD9071EEC71940067C417 /* PasteboardActions.swift */,
+				6556B21F1EE069CB00468A0A /* PasteboardModelCollection.swift */,
 				65EB49911EE1B0180012CBBC /* View.swift */,
 				65EB49931EE1B1D90012CBBC /* ViewController.swift */,
 				65EB498F1EE1AE300012CBBC /* ViewModel.swift */,
@@ -702,6 +705,7 @@
 				652CD9081EEC71940067C417 /* PasteboardActions.swift in Sources */,
 				6556B2201EE069CB00468A0A /* PasteboardModelCollection.swift in Sources */,
 				65EB49921EE1B0180012CBBC /* View.swift in Sources */,
+				652CD90A1EEC75FE0067C417 /* Layout.swift in Sources */,
 				65EB49901EE1AE300012CBBC /* ViewModel.swift in Sources */,
 				6556B1A01EE063D400468A0A /* AppDelegate.swift in Sources */,
 			);
