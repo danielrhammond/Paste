@@ -45,5 +45,6 @@ public final class PasteboardStringView: NSView, View {
             field.rightAnchor.constraint(equalTo: rightAnchor)
             ])
         field.isEditable = false
+        (field.cell as? NSTextFieldCell)?.lineBreakMode = .byTruncatingTail
     }
 }
