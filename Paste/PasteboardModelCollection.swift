@@ -27,7 +27,7 @@ public final class PasteboardModelCollection: SimpleModelCollection {
                 }
             }
             .subscribe(onNext: { [weak self] in
-                self?.onNext(.loaded([$0]))
+                self?.onNext(.loaded($0))
             })
             .disposed(by: disposeBag)
     }
