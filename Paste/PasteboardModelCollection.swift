@@ -5,11 +5,12 @@ import RxSwift
 
 public final class PasteboardModelCollection: SimpleModelCollection {
 
-    init(limit: Int = 5) {
+    init(pasteboard: NSPasteboard = NSPasteboard.general, limit: Int = 5) {
         super.init(collectionId: "pasteboard")
         RxSwift.Observable<Int>.timer(0, period: 1, scheduler: MainScheduler.instance)
+            .filter { _ in !pasteboard.shouldSupressCurrentValue() }
             .map { _ -> [Model] in
-                let res = NSPasteboard.general.readObjects(forClasses: [NSString.self], options: [:])
+                let res = pasteboard.readObjects(forClasses: [NSString.self], options: [:])
                 return (res ?? [])
                     .flatMap { $0 as? String }
                     .map { PasteboardString(value: $0) }
@@ -34,4 +35,15 @@ public final class PasteboardModelCollection: SimpleModelCollection {
 
     // MARK: Private
     private let disposeBag = DisposeBag()
+}
+
+extension NSPasteboard {
+
+    /// Suppress some types from password managers from showing up in Paste.
+    func shouldSupressCurrentValue() -> Bool {
+        let availableTypes = Set(types?.map({ $0.rawValue }) ?? [])
+        return
+            availableTypes.contains("com.agilebits.onepassword") ||
+            availableTypes.contains("org.nspasteboard.ConcealedType")
+    }
 }
