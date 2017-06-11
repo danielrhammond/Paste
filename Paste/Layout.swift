@@ -4,7 +4,7 @@ public final class FullWidthLayout: NSCollectionViewLayout {
 
     // MARK: Public
 
-    public var lineHeight: CGFloat = 24 { didSet { invalidateLayout() } }
+    public var lineHeight: CGFloat = 38 { didSet { invalidateLayout() } }
 
     // MARK: NSCollectionViewLayout
 

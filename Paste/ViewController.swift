@@ -13,5 +13,6 @@ public final class PasteboardViewController: CollectionViewController {
             viewBinder: StaticViewBindingProvider(type: PasteboardStringView.self),
             layout: layout,
             context: context)
+        backgroundColor = .clear
     }
 }

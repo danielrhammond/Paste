@@ -23,7 +23,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func loadUI() {
         let viewController = PasteboardViewController(context: context)
-        guard let windowView = window.contentView else { return }
+        guard let windowView = window.contentView as? NSVisualEffectView else { return }
+        window.appearance = NSAppearance(named: .vibrantDark)
+        windowView.blendingMode = .behindWindow
+        windowView.material = .dark
+        windowView.isEmphasized = true
         windowView.addSubview(viewController.view)
         viewController.view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
