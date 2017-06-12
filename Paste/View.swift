@@ -30,6 +30,17 @@ public final class PasteboardStringView: NSView, View, CollectionSupportingView 
 
     public var viewModel: ViewModel? { return stringViewModel }
 
+    public var highlightStyle: ViewHighlightStyle = .none {
+        didSet {
+            switch highlightStyle {
+            case .selection:
+                highlightView.isHidden = false
+            default:
+                highlightView.isHidden = true
+            }
+        }
+    }
+
     // MARK: CollectionViewSupportingView
 
     public func apply(_ layoutAttributes: NSCollectionViewLayoutAttributes) {}
@@ -37,10 +48,20 @@ public final class PasteboardStringView: NSView, View, CollectionSupportingView 
     // MARK: Private
 
     private var stringViewModel: PasteboardStringViewModel?
-
     private let field = Field(labelWithString: "")
+    private let highlightView = ColorView(color: NSColor.black.withAlphaComponent(0.2))
 
     private func loadSubviews() {
+        addSubview(highlightView)
+        highlightView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            highlightView.topAnchor.constraint(equalTo: topAnchor),
+            highlightView.leftAnchor.constraint(equalTo: leftAnchor),
+            highlightView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            highlightView.rightAnchor.constraint(equalTo: rightAnchor)
+            ])
+        highlightView.isHidden = true
+
         addSubview(field)
         field.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -51,24 +72,24 @@ public final class PasteboardStringView: NSView, View, CollectionSupportingView 
             ])
         field.drawsBackground = false
         field.isEditable = false
-        field.textColor = NSColor.white.withAlphaComponent(0.4)
+        field.textColor = NSColor.headerTextColor.withAlphaComponent(0.6)
         field.appearance = NSAppearance(named: .vibrantLight)
         (field.cell as? NSTextFieldCell)?.lineBreakMode = .byTruncatingTail
 
-        let separator = Separator(color: NSColor.white.withAlphaComponent(0.2))
+        let separator = ColorView(color: NSColor.black.withAlphaComponent(0.2))
         separator.translatesAutoresizingMaskIntoConstraints = false
         addSubview(separator)
 
         NSLayoutConstraint.activate([
-            separator.heightAnchor.constraint(equalToConstant: 1),
+            separator.heightAnchor.constraint(equalToConstant: 0.5),
             separator.bottomAnchor.constraint(equalTo: bottomAnchor),
-            separator.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
+            separator.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
             separator.rightAnchor.constraint(equalTo: rightAnchor)
             ])
     }
 }
 
-private final class Separator: NSView {
+private final class ColorView: NSView {
     init(color: NSColor) {
         super.init(frame: .zero)
         wantsLayer = true

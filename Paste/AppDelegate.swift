@@ -18,25 +18,39 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: Private
 
     private let context = Context()
-    private var rootViewController: NSViewController?
+    private lazy var contentViewController: PasteboardViewController = {
+        PasteboardViewController(context: self.context)
+    }()
     private var contextObserver: Pilot.Observer?
+    private var item: NSStatusItem?
+    private weak var popover: NSPopover?
+
+    @objc
+    private func buttonAction() {
+        guard self.popover == nil else {
+            self.popover?.close()
+            self.popover = nil
+            return
+        }
+        let popover = NSPopover()
+        popover.behavior = .transient
+        popover.contentViewController = contentViewController
+        popover.contentSize = NSSize(width: 400, height: 190)
+        if let view = item?.button {
+            popover.show(relativeTo: view.bounds, of: view, preferredEdge: .maxY)
+        }
+        self.popover = popover
+    }
 
     private func loadUI() {
-        let viewController = PasteboardViewController(context: context)
-        guard let windowView = window.contentView as? NSVisualEffectView else { return }
-        window.appearance = NSAppearance(named: .vibrantDark)
-        windowView.blendingMode = .behindWindow
-        windowView.material = .dark
-        windowView.isEmphasized = true
-        windowView.addSubview(viewController.view)
-        viewController.view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            viewController.view.topAnchor.constraint(equalTo: windowView.topAnchor),
-            viewController.view.leftAnchor.constraint(equalTo: windowView.leftAnchor),
-            viewController.view.bottomAnchor.constraint(equalTo: windowView.bottomAnchor),
-            viewController.view.rightAnchor.constraint(equalTo: windowView.rightAnchor)
-            ])
-        rootViewController = viewController
+        let image = #imageLiteral(resourceName: "pasteboard")
+        image.isTemplate = true
+
+        let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+        item.button?.image = image
+        item.target = self
+        item.action = #selector(buttonAction)
+        self.item = item
     }
 
     private func setupActionHandlers() {
@@ -46,6 +60,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             case .string(let value):
                 NSPasteboard.general.writeObjects([value as NSString])
             }
+            self.popover?.close()
             return .handled
         }
     }

@@ -15,4 +15,9 @@ public final class PasteboardViewController: CollectionViewController {
             context: context)
         backgroundColor = .clear
     }
+
+    public override func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        super.collectionView(collectionView, didSelectItemsAt: indexPaths)
+        collectionView.deselectItems(at: indexPaths)
+    }
 }

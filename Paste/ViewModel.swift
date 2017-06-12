@@ -9,6 +9,15 @@ public struct PasteboardStringViewModel: ViewModel {
     // MARK: Public
 
     public var displayString: String {
+        let trimmed = pasteboardString.value.trimmingCharacters(in: .whitespacesAndNewlines)
+        if let firstNewline = trimmed.index(of: "\n") {
+            return trimmed.prefix(upTo: firstNewline) + " …"
+        } else {
+            return trimmed
+        }
+    }
+
+    public var popoverString: String {
         return pasteboardString.value.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
@@ -18,7 +27,7 @@ public struct PasteboardStringViewModel: ViewModel {
 
     public func handleUserEvent(_ event: ViewModelUserEvent) {
         switch event {
-        case .click, .enterKey:
+        case .select:
             PasteboardCopyAction(value: .string(pasteboardString.value)).send(from: context)
         default:
             break
