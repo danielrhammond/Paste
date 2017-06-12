@@ -18,8 +18,12 @@ public final class PasteboardModelCollection: SimpleModelCollection {
             .scan([Model]()) { (combined, newModels) -> [Model] in
                 var result = combined
                 let existing = Set(combined.map({$0.modelId}))
+                let new = Set(newModels.map({ $0.modelId }))
                 for new in newModels where !existing.contains(new.modelId) {
                     result.insert(new, at: 0)
+                }
+                result = result.sorted { (lhs, rhs) in
+                    return new.contains(lhs.modelId)
                 }
                 if result.count <= limit {
                     return result
